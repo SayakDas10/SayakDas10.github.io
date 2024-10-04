@@ -15,6 +15,11 @@ header {
     border-bottom: 1px solid #e0e0e0;
 }
 
+img {
+    height: 30px;
+    width: auto;
+}
+
 .container {
     max-width: 1000px;
     margin: 30px auto;
@@ -31,11 +36,11 @@ header {
 
 .cards, .book-cards, .exercise-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
-.card, .music-item, .card-title {
+.card, .music-item, .card-title, .book-item {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     overflow: hidden;
@@ -103,6 +108,34 @@ header {
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     background-color: #f8f8f8;
+}
+
+
+.book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.book-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-cover {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
 }
 
 a {
