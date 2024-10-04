@@ -1,0 +1,118 @@
+body {
+    font-family: 'Gentium Book Plus', serif;
+    background-color: #f8f8f2; /* Off-white background */
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #ffffff; /* White header background */
+    color: #333333;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.cards, .book-cards, .exercise-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card, .music-item, .card-title {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    padding: 30px;
+    color: #445c67;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.card:hover, .music-item:hover {
+    transform: translateY(-5px);
+}
+
+.music-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.music-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.cover {
+    max-width: 80px;
+    margin-right: 20px;
+    border-radius: 6px;
+}
+
+.info {
+    max-width: calc(100% - 100px);
+}
+
+.info h3 {
+    margin: 0;
+    color: #0077b6;
+}
+
+.semester {
+    margin-bottom: 30px;
+}
+
+.course-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.course-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+a {
+    text-decoration: none;
+    color: hotpink;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555555;
+    font-size: 0.9em;
+}
