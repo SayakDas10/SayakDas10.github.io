@@ -34,13 +34,13 @@ img {
     text-align: center;
 }
 
-.cards, .book-cards, .exercise-cards {
+.cards, .exercise-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
-.card, .music-item, .card-title, .book-item {
+.card, .music-item, .card-title{
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     overflow: hidden;
