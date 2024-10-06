@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Solutions - Exercise 1</title>
+    <link rel="stylesheet" href="../../../../css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Question</h1>
+        <p>Suppose \(e_1, \ldots , e_m\) is a list of vectors in \(\mathbf{V}\) such that,</p>
+        <p>\[||a_1e_1+\ldots +a_me_m||^2 = |a_1|^2+\ldots + |a_m|^2\]</p>
+        <p>for all \(a_1,\ldots , a_m \in \mathbf{F}\). Show that \(e_1, \ldots , e_m\) is an orthonormal list.</p>
+        <h2>Solution:</h2>
+        <p>\[||a_1e_1+\ldots +a_me_m||^2\]</p>
+        <p>\[= &lt a_1e_1+ \ldots +a_me_m, a_1e_1+ \ldots +a_me_m &gt\]</p>
+        <p>\[= &lt a_1e_1, a_1e_1+ \ldots +a_me_m &gt + \ldots +&lt a_me_m, a_1e_1+ \ldots +a_me_m &gt\]</p>
+        <p>\[= &lt a_1e_1, a_1e_1 &gt + \ldots +&lt a_1e_1, a_me_m &gt + \ldots + &lt a_me_m, a_1e_1 &gt + \ldots +&lt a_me_m, a_me_m &gt\]</p>
+        <p>\[= a_1\overline a_1 &lte_1, e_1 &gt+ \ldots +a_1\overline a_m &lte_1, e_m &gt + \ldots +a_m\overline a_1 &lte_m, e_1 &gt+ \ldots +a_m\overline a_m &lte_m, e_m &gt\]</p>
+        <p>Therefore, \(&lt e_i, e_i &gt=1\) when \(i=j\) and \(&lt e_i, e_i &gt=0\) when \(i \neq j\) for all \(i,j \in \{1,\ldots , m\}\). </p>
+        <p>Hence, \(e_1, \ldots , e_m\) is an orthonormal list. [QED]</p>
+    </div>
+
+    <footer>
+        &copy; 2024 Sayak Das. Last Updated: 4 Oct 2024. | <a href="../ladr_cpt3.html">Back to Chapter 3 Solutions</a>
+    </footer>
+</body>
+
+</html>
