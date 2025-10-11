@@ -1,0 +1,408 @@
+/* Add this to the top of your style.css file */
+
+html {
+    /* Sets your custom image as the cursor */
+    /* The 'auto' is a fallback in case the image doesn't load */
+    cursor: url('images/cursor.png'), auto;
+}
+/* This ensures links and buttons still show the classic hand pointer */
+a,
+button {
+    cursor: pointer;
+}
+
+/* Define the single color palette for the sage green theme */
+:root {
+    --bg-color: #D1D8BE; /* Light grayish-green */
+    --text-color: #819A91; /* Dark sage green */
+    --accent-color: #819A91; /* Dark sage green */
+    --container-bg: #EEEFE0; /* Lightest off-white */
+    --border-color: #A7C1A8; /* Soft green */
+    --nav-bg: #EEEFE0;; /* Soft green */
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Lora', serif; /* Classic serif font for body text */
+    background-color: #ffffff; /* Fallback color */
+    /* White contour map with black lines */
+    background-image: url("images/contour_wave_clean.gif");
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    box-sizing: border-box;
+}
+
+/* Layout container */
+.site-layout {
+    width: 95%;
+    max-width: 1400px;
+    height: 90vh;
+    display: flex;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Shared styles for headings */
+h2, h3, h4, h5, h6 {
+    font-family: 'IBM Plex Mono', monospace; /* Retro monospace for headings */
+    font-weight: 600;
+}
+
+/* Left Navigation Bar */
+#left-bar {
+    width: 245px;
+    background-color: var(--nav-bg);
+    border-right: 1px dashed var(--border-color); /* Dashed border */
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+#left-bar h2 {
+    color: var(--accent-color);
+}
+
+#left-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+#left-bar ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    padding: 0.75rem 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+#left-bar ul li a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+/* Main Content Area */
+#main-content {
+    flex-grow: 1;
+    background-color: var(--bg-color);
+    padding: 2rem 2.5rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Status Bar */
+#status-bar {
+    position: relative; /* This is needed to position the tail */
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 25px; /* This makes the box rounded */
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem; /* A little space from the edge */
+}
+
+#status-bar::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Positions the tail below the box */
+    left: 40px;    /* Positions the tail from the left */
+    width: 0;
+    height: 0;
+    
+    /* This creates the triangle shape */
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--border-color);
+}
+/* Lower Content Layout */
+.content-wrapper {
+    display: flex;
+    gap: 2rem;
+}
+
+.content-box {
+    flex: 1;
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color); /* Solid border for content boxes for readability */
+    padding: 1.5rem;
+    box-shadow: 3px 3px 0px var(--nav-bg); /* Subtle hard shadow */
+}
+
+.content-box h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
+
+/* Blog Post Specific Styles */
+.blog-post {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px dashed var(--border-color); /* Dashed border */
+}
+.blog-post:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.blog-post a {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+
+/* Media Log Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px dashed var(--border-color); /* Dashed border */
+}
+th {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Footer Styles */
+footer.page-footer {
+    margin-top: 3rem;
+    border-top: 1px dashed var(--border-color); /* Dashed border */
+    padding-top: 1.5rem;
+    font-size: 0.85em;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+footer.page-footer p {
+    margin: 0.25rem 0;
+}
+/* Styles for the full blog post content */
+.blog-content {
+    max-width: 800px; /* Keeps text from becoming too wide to read */
+    margin: 0 auto; /* Centers the content */
+}
+
+.blog-content h1 {
+    color: var(--accent-color);
+}
+
+.blog-content .meta {
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+/* Make all images responsive */
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Styles for image captions */
+.blog-content figure {
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.blog-content figcaption {
+    font-size: 0.9em;
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 0.7;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* Responsive container for videos */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 2rem 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Style for the "Back to Blog" link */
+.back-link {
+    display: inline-block;
+    margin-top: 3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Sets a fixed height for the content boxes on the homepage */
+#welcome-section,
+#whats-new-section {
+    height: 150px; /* You can adjust this value */
+}
+
+/* Makes the 'What's New' section scrollable if content overflows */
+#whats-new-section {
+    overflow-y: auto; /* Adds a vertical scrollbar only when needed */
+}
+/* Add this to the end of your style.css file */
+
+/* --- Custom Scrollbar Styles --- */
+
+/* For Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) var(--nav-bg);
+}
+
+/* For Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--nav-bg); /* Color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color); /* Color of the scroll thumb */
+    border-radius: 20px; /* Roundness of the scroll thumb */
+    border: 2px solid var(--nav-bg); /* Creates padding around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color); /* Color of the thumb on hover */
+}
+/* Add this to the end of your style.css file */
+
+/* --- Styles for the GIF in the heading --- */
+.heading-gif {
+    height: 1.1em; /* Scales the GIF's height to the font size */
+    width: auto; /* Maintains the aspect ratio */
+    vertical-align: middle; /* Aligns the GIF nicely with the text */
+    margin-left: 8px; /* Adds a little space after your name */
+}
+/* --- Smooth Transitions --- */
+/* Add transitions to elements that will change color */
+body, #left-bar, #main-content, .content-box, #status-bar, .theme-switch-wrapper span {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+#status-bar::after {
+    transition: border-top-color 0.3s ease;
+}
+::-webkit-scrollbar-thumb {
+    transition: background-color 0.3s ease;
+}
+
+/* --- Dark Mode Palette & Styles --- */
+body.dark-mode {
+    /* Define the new set of colors for dark mode */
+    --bg-color: #2E3532;      /* Dark Slate Gray for main content bg */
+    --text-color: #BCC4A7;    /* Lighter sage for text */
+    --accent-color: #A7C1A8;  /* Keep accent a bit brighter */
+    --container-bg: #3A4640;  /* Dark gray-green for boxes */
+    --border-color: #50625B;  /* Muted dark green for borders */
+    --nav-bg: #3A4640;        /* Same as container bg */
+
+    /* The original contour.gif has a white background which clashes
+       with the dark theme. This sets a solid dark color for the page
+       background instead. For a better effect, consider creating a
+       dark version of your background GIF. */
+    background-color: #1c211e;
+    background-image: none; /* Hides the light-themed GIF */
+}
+
+/* --- Dark Mode Toggle Switch Styles --- */
+
+/* Wrapper for the list item in the nav */
+.theme-switch-li {
+    margin-top: auto; /* Pushes toggle to the bottom of the nav */
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+    margin-top: 1.5rem;
+}
+
+/* Flex container for the switch and its label */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch-wrapper span {
+    margin-left: 12px;
+    color: var(--text-color);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9em;
+}
+
+/* The switch housing */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    flex-shrink: 0; /* Prevents shrinking in the flex container */
+}
+
+/* Hide the default HTML checkbox */
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider track */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #A7C1A8; /* Soft green for the track */
+    transition: 0.3s;
+    border-radius: 24px;
+}
+
+/* The slider knob */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
