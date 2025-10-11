@@ -27,7 +27,12 @@ body {
     font-family: 'Lora', serif; /* Classic serif font for body text */
     background-color: #ffffff; /* Fallback color */
     /* White contour map with black lines */
-    background-image: url("images/contour_wave_clean.gif");
+    background-image: url("images/contour.png");
+/* --- Add these lines --- */
+    background-size: cover; /* Scales the image to cover the entire area */
+    background-repeat: no-repeat; /* Prevents the image from tiling */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background stationary on scroll */
     min-height: 100vh;
     display: flex;
     align-items: center;
