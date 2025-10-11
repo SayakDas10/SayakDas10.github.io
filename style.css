@@ -406,3 +406,121 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
 }
+/* --- Mobile Responsiveness & Hamburger Menu --- */
+
+/* By default, hide the mobile-only elements on desktop */
+#mobile-header, #hamburger-menu, #overlay {
+    display: none;
+}
+
+/* This is the media query for mobile devices */
+@media (max-width: 800px) {
+    /* Adjust body padding for smaller screens */
+    body {
+        padding: 0;
+    }
+
+    /* Make the main layout container full width and height */
+    .site-layout {
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        flex-direction: column; /* Stack elements vertically */
+        box-shadow: none;
+        border: none;
+    }
+
+    /* --- Mobile Header --- */
+    #mobile-header {
+        display: flex; /* Use flexbox for alignment */
+        align-items: center;
+        justify-content: space-between; /* Pushes title and hamburger to opposite ends */
+        padding: 1rem 1.5rem;
+        background-color: var(--nav-bg);
+        border-bottom: 1px dashed var(--border-color);
+        position: sticky; /* Keeps the header at the top when scrolling */
+        top: 0;
+        z-index: 1001; /* Ensures it's above other content */
+    }
+    #mobile-header h2 {
+        margin: 0;
+        color: var(--accent-color);
+        font-size: 1.2em;
+    }
+
+    /* --- Hamburger Menu Button --- */
+    #hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1002; /* Above the mobile header */
+    }
+    #hamburger-menu span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--accent-color);
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* --- Sidebar Navigation for Mobile (Slide-in Menu) --- */
+    #left-bar {
+        position: fixed; /* Takes it out of the normal document flow */
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        z-index: 1000;
+        transform: translateX(-100%); /* Hides the menu off-screen to the left */
+        transition: transform 0.3s ease-in-out;
+        overflow-y: auto; /* Allows scrolling if nav links are many */
+    }
+    /* This class is added via JavaScript to show the menu */
+    #left-bar.nav-open {
+        transform: translateX(0);
+    }
+    /* On mobile, hide the original h2 inside the sidebar */
+    #left-bar h2 {
+        display: none;
+    }
+
+    /* --- Overlay --- */
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999; /* Sits below the nav but above the main content */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    /* This class is added via JS to show the overlay */
+    body.nav-open-body #overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+    /* Prevent body scroll when nav is open */
+    body.nav-open-body {
+        overflow: hidden;
+    }
+
+    /* --- Main Content Adjustments --- */
+    #main-content {
+        padding: 1.5rem;
+    }
+    .content-wrapper {
+        flex-direction: column; /* Stack content boxes vertically */
+    }
+    #welcome-section, #whats-new-section {
+        height: auto; /* Remove fixed height on mobile */
+    }
+}
