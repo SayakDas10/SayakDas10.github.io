@@ -162,6 +162,11 @@ th {
     font-family: 'IBM Plex Mono', monospace;
 }
 
+.table-container {
+    width : 100%;
+    overflow-x: auto;
+}
+
 /* Footer Styles */
 footer.page-footer {
     margin-top: 3rem;
@@ -491,4 +496,12 @@ input:checked + .slider:before {
 
 .contact-link:hover {
     opacity: 0.8;
+}
+@media (max-width: 800px) {
+    /* --- Media Log Table Fix for Mobile --- */
+    /* Prevents the rating stars from wrapping on narrow screens */
+    #main-content table td:last-child,
+    #main-content table th:last-child {
+        white-space: nowrap;
+    }
 }
