@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Animated Title Logic ---
     const name = 'Sayak';
     let index = 0;
     setInterval(() => {
@@ -10,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 600); 
 
     
-    // --- Dynamic "Last Updated" Date Logic ---
     const lastUpdatedElement = document.getElementById('last-updated');
     if (lastUpdatedElement) {
         const today = new new Date();
@@ -19,22 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
         lastUpdatedElement.textContent = formattedDate;
     }
 
-    // --- Dark Mode Logic ---
-    // This now runs on every page to apply the theme from localStorage
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark') {
         document.body.classList.add('dark-mode');
     }
 
-    // This logic only runs if the toggle switch exists on the page
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
-        // Ensure the toggle reflects the current theme state
         if (currentTheme === 'dark') {
             themeToggle.checked = true;
         }
 
-        // Add the event listener to handle theme changes
         themeToggle.addEventListener('change', function() {
             if (this.checked) {
                 document.body.classList.add('dark-mode');
@@ -46,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Mobile Navigation Logic ---
     const hamburgerMenu = document.getElementById('hamburger-menu');
     const navBar = document.getElementById('left-bar');
     const overlay = document.getElementById('overlay');
@@ -59,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburgerMenu && navBar && overlay) {
         hamburgerMenu.addEventListener('click', (e) => {
             e.stopPropagation();
-            // This now toggles the classes, allowing the button to open AND close the menu.
             navBar.classList.toggle('nav-open');
             document.body.classList.toggle('nav-open-body');
         });
