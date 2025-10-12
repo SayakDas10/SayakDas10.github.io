@@ -1,17 +1,3 @@
-/* Add this to the top of your style.css file */
-
-html {
-    /* Sets your custom image as the cursor */
-    /* The 'auto' is a fallback in case the image doesn't load */
-    cursor: url('images/cursor.png'), auto;
-}
-/* This ensures links and buttons still show the classic hand pointer */
-a,
-button {
-    cursor: pointer;
-}
-
-/* Define the single color palette for the sage green theme */
 :root {
     --bg-color: #D1D8BE; /* Light grayish-green */
     --text-color: #819A91; /* Dark sage green */
@@ -26,9 +12,7 @@ body {
     margin: 0;
     font-family: 'Lora', serif; /* Classic serif font for body text */
     background-color: #ffffff; /* Fallback color */
-    /* White contour map with black lines */
     background-image: url("images/contour.png");
-/* --- Add these lines --- */
     background-size: cover; /* Scales the image to cover the entire area */
     background-repeat: no-repeat; /* Prevents the image from tiling */
     background-position: center; /* Centers the image */
@@ -53,7 +37,7 @@ body {
 
 /* Shared styles for headings */
 h2, h3, h4, h5, h6 {
-    font-family: 'IBM Plex Mono', monospace; /* Retro monospace for headings */
+    font-family: 'IBM Plex Mono', monospace; 
     font-weight: 600;
 }
 
@@ -106,13 +90,13 @@ h2, h3, h4, h5, h6 {
 
 /* Status Bar */
 #status-bar {
-    position: relative; /* This is needed to position the tail */
+    position: relative; 
     background-color: var(--container-bg);
     border: 1px solid var(--border-color);
-    border-radius: 25px; /* This makes the box rounded */
+    border-radius: 25px; 
     padding: 1rem 1.5rem;
     margin-bottom: 2rem;
-    margin-left: 1rem; /* A little space from the edge */
+    margin-left: 1rem; 
 }
 
 #status-bar::after {
@@ -123,7 +107,6 @@ h2, h3, h4, h5, h6 {
     width: 0;
     height: 0;
     
-    /* This creates the triangle shape */
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid var(--border-color);
@@ -137,9 +120,9 @@ h2, h3, h4, h5, h6 {
 .content-box {
     flex: 1;
     background-color: var(--container-bg);
-    border: 1px solid var(--border-color); /* Solid border for content boxes for readability */
+    border: 1px solid var(--border-color); 
     padding: 1.5rem;
-    box-shadow: 3px 3px 0px var(--nav-bg); /* Subtle hard shadow */
+    box-shadow: 3px 3px 0px var(--nav-bg); 
 }
 
 .content-box h3 {
@@ -151,7 +134,7 @@ h2, h3, h4, h5, h6 {
 .blog-post {
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px dashed var(--border-color); /* Dashed border */
+    border-bottom: 1px dashed var(--border-color); 
 }
 .blog-post:last-child {
     border-bottom: none;
@@ -173,7 +156,7 @@ table {
 th, td {
     padding: 0.75rem;
     text-align: left;
-    border-bottom: 1px dashed var(--border-color); /* Dashed border */
+    border-bottom: 1px dashed var(--border-color); 
 }
 th {
     font-family: 'IBM Plex Mono', monospace;
@@ -182,7 +165,7 @@ th {
 /* Footer Styles */
 footer.page-footer {
     margin-top: 3rem;
-    border-top: 1px dashed var(--border-color); /* Dashed border */
+    border-top: 1px dashed var(--border-color); 
     padding-top: 1.5rem;
     font-size: 0.85em;
     color: var(--text-color);
@@ -194,8 +177,8 @@ footer.page-footer p {
 }
 /* Styles for the full blog post content */
 .blog-content {
-    max-width: 800px; /* Keeps text from becoming too wide to read */
-    margin: 0 auto; /* Centers the content */
+    max-width: 800px; 
+    margin: 0 auto; 
 }
 
 .blog-content h1 {
@@ -265,24 +248,20 @@ footer.page-footer p {
 /* Sets a fixed height for the content boxes on the homepage */
 #welcome-section,
 #whats-new-section {
-    height: 150px; /* You can adjust this value */
+    height: 150px; 
 }
 
-/* Makes the 'What's New' section scrollable if content overflows */
 #whats-new-section {
-    overflow-y: auto; /* Adds a vertical scrollbar only when needed */
+    overflow-y: auto; 
 }
-/* Add this to the end of your style.css file */
 
 /* --- Custom Scrollbar Styles --- */
 
-/* For Firefox */
 html {
     scrollbar-width: thin;
     scrollbar-color: var(--accent-color) var(--nav-bg);
 }
 
-/* For Chrome, Safari, and Edge */
 ::-webkit-scrollbar {
     width: 10px; /* Width of the entire scrollbar */
 }
@@ -300,17 +279,13 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--text-color); /* Color of the thumb on hover */
 }
-/* Add this to the end of your style.css file */
 
-/* --- Styles for the GIF in the heading --- */
 .heading-gif {
-    height: 1.1em; /* Scales the GIF's height to the font size */
-    width: auto; /* Maintains the aspect ratio */
-    vertical-align: middle; /* Aligns the GIF nicely with the text */
-    margin-left: 8px; /* Adds a little space after your name */
+    height: 1.1em; 
+    width: auto; 
+    vertical-align: middle; 
+    margin-left: 8px; 
 }
-/* --- Smooth Transitions --- */
-/* Add transitions to elements that will change color */
 body, #left-bar, #main-content, .content-box, #status-bar, .theme-switch-wrapper span {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -321,9 +296,7 @@ body, #left-bar, #main-content, .content-box, #status-bar, .theme-switch-wrapper
     transition: background-color 0.3s ease;
 }
 
-/* --- Dark Mode Palette & Styles --- */
 body.dark-mode {
-    /* Define the new set of colors for dark mode */
     --bg-color: #2E3532;      /* Dark Slate Gray for main content bg */
     --text-color: #BCC4A7;    /* Lighter sage for text */
     --accent-color: #A7C1A8;  /* Keep accent a bit brighter */
@@ -331,15 +304,10 @@ body.dark-mode {
     --border-color: #50625B;  /* Muted dark green for borders */
     --nav-bg: #3A4640;        /* Same as container bg */
 
-    /* The original contour.gif has a white background which clashes
-       with the dark theme. This sets a solid dark color for the page
-       background instead. For a better effect, consider creating a
-       dark version of your background GIF. */
     background-color: #1c211e;
     background-image: none; /* Hides the light-themed GIF */
 }
 
-/* --- Dark Mode Toggle Switch Styles --- */
 
 /* Wrapper for the list item in the nav */
 .theme-switch-li {
@@ -368,10 +336,9 @@ body.dark-mode {
     display: inline-block;
     width: 50px;
     height: 24px;
-    flex-shrink: 0; /* Prevents shrinking in the flex container */
+    flex-shrink: 0; 
 }
 
-/* Hide the default HTML checkbox */
 .theme-switch input {
     opacity: 0;
     width: 0;
@@ -411,41 +378,36 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
 }
-/* --- Mobile Responsiveness & Hamburger Menu --- */
 
-/* By default, hide the mobile-only elements on desktop */
 #mobile-header, #hamburger-menu, #overlay {
     display: none;
 }
 
-/* This is the media query for mobile devices */
 @media (max-width: 800px) {
     /* Adjust body padding for smaller screens */
     body {
         padding: 0;
     }
 
-    /* Make the main layout container full width and height */
     .site-layout {
         width: 100%;
         max-width: 100%;
         height: 100vh;
-        flex-direction: column; /* Stack elements vertically */
+        flex-direction: column; 
         box-shadow: none;
         border: none;
     }
 
-    /* --- Mobile Header --- */
     #mobile-header {
-        display: flex; /* Use flexbox for alignment */
+        display: flex; 
         align-items: center;
-        justify-content: space-between; /* Pushes title and hamburger to opposite ends */
+        justify-content: space-between; 
         padding: 1rem 1.5rem;
         background-color: var(--nav-bg);
         border-bottom: 1px dashed var(--border-color);
-        position: sticky; /* Keeps the header at the top when scrolling */
+        position: sticky; 
         top: 0;
-        z-index: 1001; /* Ensures it's above other content */
+        z-index: 1001; 
     }
     #mobile-header h2 {
         margin: 0;
@@ -453,7 +415,6 @@ input:checked + .slider:before {
         font-size: 1.2em;
     }
 
-    /* --- Hamburger Menu Button --- */
     #hamburger-menu {
         display: flex;
         flex-direction: column;
@@ -464,7 +425,7 @@ input:checked + .slider:before {
         border: none;
         cursor: pointer;
         padding: 0;
-        z-index: 1002; /* Above the mobile header */
+        z-index: 1002; 
     }
     #hamburger-menu span {
         width: 100%;
@@ -474,24 +435,21 @@ input:checked + .slider:before {
         transition: all 0.3s ease-in-out;
     }
 
-    /* --- Sidebar Navigation for Mobile (Slide-in Menu) --- */
     #left-bar {
-        position: fixed; /* Takes it out of the normal document flow */
+        position: fixed; 
         top: 0;
         left: 0;
         height: 100%;
         width: 250px;
         z-index: 1000;
-        transform: translateX(-100%); /* Hides the menu off-screen to the left */
+        transform: translateX(-100%); 
         transition: transform 0.3s ease-in-out;
-        overflow-y: auto; /* Allows scrolling if nav links are many */
+        overflow-y: auto; 
     }
-    /* This class is added via JavaScript to show the menu */
     #left-bar.nav-open {
         transform: translateX(0);
     }
 
-    /* --- Overlay --- */
     #overlay {
         position: fixed;
         top: 0;
@@ -499,33 +457,29 @@ input:checked + .slider:before {
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
-        z-index: 999; /* Sits below the nav but above the main content */
+        z-index: 999; 
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
     }
-    /* This class is added via JS to show the overlay */
     body.nav-open-body #overlay {
         opacity: 1;
         visibility: visible;
     }
-    /* Prevent body scroll when nav is open */
     body.nav-open-body {
         overflow: hidden;
     }
 
-    /* --- Main Content Adjustments --- */
     #main-content {
         padding: 1.5rem;
     }
     .content-wrapper {
-        flex-direction: column; /* Stack content boxes vertically */
+        flex-direction: column; 
     }
     #welcome-section, #whats-new-section {
-        height: auto; /* Remove fixed height on mobile */
+        height: auto; 
     }
 }
-/* --- Contact Link Style --- */
 .contact-link {
     color: var(--accent-color);
     font-weight: 600;
