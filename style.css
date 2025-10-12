@@ -47,7 +47,7 @@ body {
     max-width: 1400px;
     height: 90vh;
     display: flex;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -490,10 +490,6 @@ input:checked + .slider:before {
     #left-bar.nav-open {
         transform: translateX(0);
     }
-    /* On mobile, hide the original h2 inside the sidebar */
-    #left-bar h2 {
-        display: none;
-    }
 
     /* --- Overlay --- */
     #overlay {
@@ -528,4 +524,17 @@ input:checked + .slider:before {
     #welcome-section, #whats-new-section {
         height: auto; /* Remove fixed height on mobile */
     }
+}
+/* --- Contact Link Style --- */
+.contact-link {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.contact-link:hover {
+    opacity: 0.8;
 }
