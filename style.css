@@ -454,6 +454,9 @@ input:checked + .slider:before {
     #left-bar.nav-open {
         transform: translateX(0);
     }
+    #left-bar h2 {
+        display:none;
+    }
 
     #overlay {
         position: fixed;
