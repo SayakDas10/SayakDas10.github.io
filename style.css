@@ -140,13 +140,13 @@ h2, h3, h4, h5, h6 {
     border-bottom: none;
     margin-bottom: 0;
 }
-.blog-post a {
+.blog-post a,
+#whats-new-section a{
     color: var(--accent-color);
     font-weight: 600;
     text-decoration: underline;
     text-decoration-style: wavy;
 }
-
 /* Media Log Table Styles */
 table {
     width: 100%;
